@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pop-up</title>
+    <h1> Aguarde ! </h1>
+    <style>
+        /* Define o estilo do pop-up */
+        #popup {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-image: url('https://img.freepik.com/premium-vector/new-message-notification-concept-3d-mail-letter-message-chat-speak-dialog-post-icon-sign-symbol_659151-750.jpg');
+            background-size: cover;
+            padding: 20px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px black;
+            z-index: 9999;
+            color: white;
+            text-align: center;
+            opacity: 0; /* Define a opacidade inicial como 0 */
+            transition: opacity 0.5s ease-in-out; /* Adiciona a transição suave */
+        }
+
+        /* Define o estilo do botão de fechar */
+        #popup button {
+            display: block;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Define o estilo do botão de fechar ao passar o mouse por cima */
+        #popup button:hover {
+            background-color: #FFA500;
+            box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Define o estilo do pop-up quando estiver visível */
+        #popup.visible {
+            opacity: 1; /* Define a opacidade como 1 */
+        }
+
+        /* Define o estilo do texto "clique aqui" */
+        #popup a {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Define o pop-up -->
+    <div id="popup">
+        <p>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</p>
+        <a href="https://github.com/NathanaelBrito1" target="_blank">Clique aqui</a>
+        <button onclick="fecharPopUp()">Fechar</button>
+    </div>
+
+    <!-- Script do pop-up -->
+    <script>
+        // Função para exibir o pop-up
+        function exibirPopUp() {
+            var popUp = document.getElementById("popup");
+            popUp.classList.add("visible"); // Adiciona a classe "visible" para mostrar o pop-up
+            setTimeout(function() {
+                popUp.classList.remove("visible"); // Remove a classe "visible" para esconder o pop-up
+            }, 5000);
+        }
+
+        // Função para fechar o pop-up
+        function fecharPopUp() {
+            var popUp = document.getElementById("popup");
+            popUp.classList.remove("visible"); // Remove a classe "visible" para esconder o pop-up
+        }
+
+        // Inicia a exibição do pop-up a segundos
+        setInterval(exibirPopUp, 5000);
+    </script>
+
+</body>
+</html>
